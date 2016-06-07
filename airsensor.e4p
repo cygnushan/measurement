@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.6.dtd">
+<!-- eric4 project file for project airsensor -->
+<!-- Saved: 2016-01-21, 23:13:19 -->
+<!-- Copyright (C) 2016 ,  -->
+<Project version="4.6">
+  <Language></Language>
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <ProjectType>Qt4</ProjectType>
+  <Description></Description>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Sources>
+    <Source>__init__.py</Source>
+    <Source>Ui_set518p.py</Source>
+    <Source>mypic_rc.py</Source>
+    <Source>set518p.py</Source>
+    <Source>Ui_main.py</Source>
+    <Source>qmdz_main.py</Source>
+    <Source>Ui_coordinate.py</Source>
+    <Source>Ui_system_set.py</Source>
+    <Source>system_set.py</Source>
+    <Source>VI_spectrum/Ui_VI_main.py</Source>
+    <Source>VI_spectrum/Ui_VI_2400_set.py</Source>
+    <Source>VI_spectrum/Ui_VI_gas_set.py</Source>
+    <Source>SC_spectrum/Ui_SC_gas_set.py</Source>
+    <Source>SC_spectrum/Ui_SC_2400.py</Source>
+    <Source>ST_spectrum/Ui_ST_main.py</Source>
+    <Source>ST_spectrum/Ui_ST_gas_set.py</Source>
+    <Source>ST_spectrum/Ui_ST_2400.py</Source>
+    <Source>ST_spectrum/ST_main.py</Source>
+    <Source>ST_spectrum/ST_2400.py</Source>
+    <Source>ST_spectrum/ST_gas_set.py</Source>
+    <Source>coordinate.py</Source>
+    <Source>SC_spectrum/SC_2400.py</Source>
+    <Source>VI_spectrum/VI_main.py</Source>
+    <Source>VI_spectrum/VI_gas_set.py</Source>
+    <Source>VI_spectrum/VI_2400_set.py</Source>
+    <Source>SC_spectrum/Ui_SC_main.py</Source>
+  </Sources>
+  <Forms>
+    <Form>set518p.ui</Form>
+    <Form>main.ui</Form>
+    <Form>coordinate.ui</Form>
+    <Form>system_set.ui</Form>
+    <Form>VI_spectrum/VI_main.ui</Form>
+    <Form>VI_spectrum/VI_2400_set.ui</Form>
+    <Form>VI_spectrum/VI_gas_set.ui</Form>
+    <Form>SC_spectrum/SC_gas_set.ui</Form>
+    <Form>SC_spectrum/SC_2400.ui</Form>
+    <Form>ST_spectrum/ST_gas_set.ui</Form>
+    <Form>ST_spectrum/ST_main.ui</Form>
+    <Form>ST_spectrum/ST_2400.ui</Form>
+    <Form>SC_spectrum/SC_main.ui</Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+    <Resource>mypic.qrc</Resource>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES" />
+  </FiletypeAssociations>
+</Project>

@@ -1,0 +1,41 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icons/13.png</file>
+    <file>icons/14.png</file>
+    <file>icons/15.png</file>
+    <file>icons/16.png</file>
+    <file>icons/17.png</file>
+    <file>icons/19.png</file>
+    <file>icons/20.png</file>
+    <file>icons/21.png</file>
+    <file>icons/22.png</file>
+    <file>icons/23.png</file>
+    <file>icons/25.png</file>
+    <file>icons/26.png</file>
+    <file>icons/27.png</file>
+    <file>icons/277.png</file>
+    <file>icons/518.png</file>
+    <file>icons/324262.ico</file>
+    <file>icons/324263.ico</file>
+    <file>icons/324264.ico</file>
+    <file>icons/324266.ico</file>
+    <file>icons/copyright.png</file>
+    <file>icons/dlb.png</file>
+    <file>icons/folder.ico</file>
+    <file>icons/folder.png</file>
+    <file>icons/gastitle.png</file>
+    <file>icons/guan.png</file>
+    <file>icons/kai.png</file>
+    <file>icons/lmd.png</file>
+    <file>icons/logo.png</file>
+    <file>icons/nodlb.png</file>
+    <file>icons/nowky.png</file>
+    <file>icons/noyb.png</file>
+    <file>icons/partulab.png</file>
+    <file>icons/qmdz.png</file>
+    <file>icons/title.png</file>
+    <file>icons/white.png</file>
+    <file>icons/wky.png</file>
+    <file>icons/yb.png</file>
+  </qresource>
+</RCC>

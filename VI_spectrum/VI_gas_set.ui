@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>480</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>VI谱气压控制</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../mypic.qrc">
+    <normaloff>:/icon/icons/gastitle.png</normaloff>:/icon/icons/gastitle.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>20</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>20</number>
+     </property>
+     <item>
+      <widget class="QCheckBox" name="const_flow">
+       <property name="text">
+        <string>恒定气体总流量</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>总流量</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="total_flow">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>120</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="flow_unit">
+         <property name="text">
+          <string>mL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="minimumSize">
+              <size>
+               <width>40</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>量程</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="minimumSize">
+              <size>
+               <width>106</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>106</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>气体类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="minimumSize">
+              <size>
+               <width>85</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>85</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>百分比</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="minimumSize">
+              <size>
+               <width>86</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>86</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>流量</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="flow1">
+             <property name="minimumSize">
+              <size>
+               <width>79</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>流量计1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="flow1_range">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>2000</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="gas_type1">
+             <property name="minimumSize">
+              <size>
+               <width>106</width>
+               <height>21</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>106</width>
+               <height>21</height>
+              </size>
+             </property>
+             <item>
+              <property name="text">
+               <string>空气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氩气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>四氟化碳</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>甲烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>三氟甲烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>乙烯</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>乙烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>六氟乙烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>丙烯</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>丙烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>异丁烯</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>正丁烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>异丁烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>一氧化碳</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>二氧化碳</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氯气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氢气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氯化氢</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氦气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氪气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氮气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>三氟化氮</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>一氧化氮</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>一氧化二氮</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氖气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氧气</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>硅烷</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>六氟化硫</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>二氧化硫</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>氙气</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="flow1_ratio">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="flow1_rate"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="flow2">
+           <property name="minimumSize">
+            <size>
+             <width>79</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>79</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>流量计2</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="flow2_range">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>18</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="gas_type2">
+           <property name="minimumSize">
+            <size>
+             <width>106</width>
+             <height>21</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>106</width>
+             <height>21</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>空气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氩气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>四氟化碳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>甲烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>三氟甲烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>乙烯</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>乙烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>六氟乙烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>丙烯</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>丙烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>异丁烯</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>正丁烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>异丁烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>一氧化碳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>二氧化碳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氯气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氢气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氯化氢</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氦气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氪气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氮气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>三氟化氮</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>一氧化氮</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>一氧化二氮</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氖气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氧气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>硅烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>六氟化硫</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>二氧化硫</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氙气</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="flow2_ratio">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="flow2_rate"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="flow3">
+           <property name="minimumSize">
+            <size>
+             <width>79</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>79</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>流量计3</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="flow3_range">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>18</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>50</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="gas_type3">
+           <property name="minimumSize">
+            <size>
+             <width>106</width>
+             <height>21</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>106</width>
+             <height>21</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>空气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氩气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>四氟化碳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>甲烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>三氟甲烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>乙烯</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>乙烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>六氟乙烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>丙烯</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>丙烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>异丁烯</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>正丁烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>异丁烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>一氧化碳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>二氧化碳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氯气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氢气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氯化氢</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氦气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氪气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氮气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>三氟化氮</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>一氧化氮</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>一氧化二氮</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氖气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氧气</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>硅烷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>六氟化硫</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>二氧化硫</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>氙气</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="flow3_ratio">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="flow3_rate"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="gas_save">
+         <property name="text">
+          <string>保存</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="gas_cancel">
+         <property name="text">
+          <string>退出</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../mypic.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>gas_cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
