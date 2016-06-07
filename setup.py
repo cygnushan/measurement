@@ -18,13 +18,13 @@ target = Executable(
     copyDependentFiles=True,
     appendScriptToExe=True,
     appendScriptToLibrary=False,
-    icon="icons/324263.ico",
+    icon="icons/GRMS.ico",
     shortcutName="gas-sensing_resistors measurement system",
     shortcutDir="DesktopFolder"
     )
 
 setup( 
-	name = "qmdz",
+	name = "GRMS2",
     version = "0.1",
     author="cygnushan",
     description = "gas-sensing_resistors measurement software",
