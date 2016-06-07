@@ -48,7 +48,7 @@ class C2400():
         logger.info(self.devinfo)
         return self.devinfo
     
-    def measure_current(self, v_out, i_limit=0, mode=0):
+    def measure_current(self, v_out, i_limit="AUTO", mode=0):
         
         self.inst.write("*RST")
         self.inst.write(":SOUR:FUNC VOLT")
@@ -56,18 +56,18 @@ class C2400():
         # self.inst.write(":SOUR:VOLT:RANGE " + v_out)
         self.inst.write(":SOUR:VOLT:LEV " + v_out)
         self.inst.write(":SENS:FUNC \"CURR\"")
-        if i_limit:
-            self.inst.write(":SENS:CURR:PROT " + i_limit) #i_limit 10e-3 
-            self.inst.write(":SENS:CURR:RANG " + i_limit) 
-        else:
+        if i_limit == "AUTO":
             self.inst.write(":SENS:CURR:RANG:AUTO ON")
+        else:
+            self.inst.write(":SENS:CURR:PROT " + i_limit) #i_limit 10e-3 
+            self.inst.write(":SENS:CURR:RANG " + i_limit)             
         if mode:
             self.inst.write(":SYST:RSEN ON")
         else:
             self.inst.write(":SYST:RSEN OFF")
         self.inst.write(":OUTP ON")  
         
-    def measure_voltage(self, i_out, v_limit=0, mode=0):
+    def measure_voltage(self, i_out, v_limit="AUTO", mode=0):
 
         self.inst.write("*RST")
         self.inst.write(":SOUR:FUNC CURR")
@@ -76,10 +76,10 @@ class C2400():
         self.inst.write(":SOUR:CURR:LEV " + i_out)
         self.inst.write(":SENS:FUNC \"VOLT\"")
         # self.inst.write(":SENS:VOLT:PROT " + v_limit) #i_limit 10e-3   
-        if v_limit:
-            self.inst.write(":SENS:VOLT:RANG " + v_limit) 
+        if v_limit=="AUTO":
+            self.inst.write(":SENS:VOLT:RANG:AUTO ON")
         else:
-            self.inst.write(":SENS:VOLT:RANG:AUTO ON") 
+            self.inst.write(":SENS:VOLT:RANG " + v_limit)  
         if mode:
             self.inst.write(":SYST:RSEN ON")
         else:

@@ -375,7 +375,7 @@ class ST_GUI(QDialog, Ui_ST_APP):
         if self.RT_test:
             self.RT_measure()
         else:
-            self.Rt_measuer()
+            self.Rt_measure()
             
  
     def RT_measure(self):
@@ -400,9 +400,9 @@ class ST_GUI(QDialog, Ui_ST_APP):
     
     def RT_plot(self):
         if self.vi_mode:
-            vol,curr,res = Keithley2400.measure_voltage(self.src_curr, self.vlimit, self.meas_type)
+            vol,curr,res = Keithley2400.read_vdata()
         else:
-            vol,curr,res = Keithley2400.measure_current(self.src_vol, self.ilimit, self.meas_type)
+            vol,curr,res = Keithley2400.read_idata()
         self.now_R.setText(str(res))
         self.RT_dataY.append(res)
         if len(self.RT_dataY) == 1:
@@ -410,7 +410,7 @@ class ST_GUI(QDialog, Ui_ST_APP):
         else:
             self.RT_MPL.generateData(self.RT_dataX, self.RT_dataY, self.log_flag, type=0)
     
-    def Rt_measuer(self):
+    def Rt_measure(self):
         # 等待温度达到测量点
         if (self.meas_mode == 0 and len(qmdz_const.temp_list) > 0):
             self.wait_temp(self.exp_temp)
@@ -631,13 +631,9 @@ class ST_GUI(QDialog, Ui_ST_APP):
             logger.warning("AI518P isn't connected!")
             self.ai518_sta.setPixmap(QtGui.QPixmap(":/icon/icons/nowky.png"))
             
-        GPIB_PORT = Keithley2400.get_gpibport()
-        if GPIB_PORT !="":
-            Keithley2400.conncet_inst()
-            self.inst_sta.setPixmap(QtGui.QPixmap(":/icon/icons/yb.png"))
-            self.voltage,self.current,self.resistance = Keithley2400.measure_ohms_auto('200e6',qmdz_const.MEAS_MODE)
-            self.now_R.setText(str(self.resistance))
-            # Keithley2400.close_inst()         
+        instState = Keithley2400.conncet_inst()
+        if instState:
+            self.inst_sta.setPixmap(QtGui.QPixmap(":/icon/icons/yb.png"))     
         else:
             QtGui.QMessageBox.warning(self, u'警告', u"仪表2400未连接!")
             logger.warning("2400 isn't connected!")

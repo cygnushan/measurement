@@ -487,16 +487,9 @@ class VI_TEST(QDialog, Ui_Dialog):
             logger.warning("AI518P isn't connected!")
             self.ai518_sta.setPixmap(QtGui.QPixmap(":/icon/icons/nowky.png"))
             
-        GPIB_PORT = Keithley2400.get_gpibport()
-        if GPIB_PORT !="":
-            Keithley2400.conncet_inst()
-            self.inst_sta.setPixmap(QtGui.QPixmap(":/icon/icons/yb.png"))
-            # self.voltage,self.current,self.resistance = Keithley2400.measure_ohms_auto('200e6',qmdz_const.MEAS_MODE)
-            self.voltage,self.current,self.resistance = Keithley2400.measure_voltage('1e-6', '100', qmdz_const.MEAS_MODE)
-            self.now_v.setText(str(self.voltage))
-            self.now_I.setText(str(self.current)) 
-            self.now_R.setText(str(self.resistance))
-            Keithley2400.close_inst()         
+        instState = Keithley2400.conncet_inst()
+        if instState:
+            self.inst_sta.setPixmap(QtGui.QPixmap(":/icon/icons/yb.png"))     
         else:
             QtGui.QMessageBox.warning(self, u'警告', u"仪表2400未连接!")
             logger.warning("2400 isn't connected!")

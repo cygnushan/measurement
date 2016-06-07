@@ -189,6 +189,10 @@ class SC_GUI(QDialog, Ui_SC_APP):
         
         self.get_inst_conf()
         
+        if self.vi_mode:
+            Keithley2400.measure_voltage(self.src_curr, self.vlimit, self.meas_type)
+        else:
+            Keithley2400.measure_current(self.src_vol, self.ilimit, self.meas_type)        
         # self.ref_time = int(time.time())
         self.timer.start(1000)
         
@@ -325,9 +329,9 @@ class SC_GUI(QDialog, Ui_SC_APP):
         
     def get_resistance(self):
         if self.vi_mode:
-            vol,curr,res = Keithley2400.measure_voltage(self.src_curr, self.vlimit, self.meas_type)
+            vol,curr,res = Keithley2400.read_vdata()
         else:
-            vol,curr,res = Keithley2400.measure_current(self.src_vol, self.ilimit, self.meas_type)
+            vol,curr,res = Keithley2400.read_idata()
         self.now_R.setText(str(res))
         self.dataY[self.c_index].append(res)
         if len(self.dataX[self.c_index]) == 1:
@@ -424,13 +428,9 @@ class SC_GUI(QDialog, Ui_SC_APP):
             logger.warning("AI518P isn't connected!")
             self.ai518_sta.setPixmap(QtGui.QPixmap(":/icon/icons/nowky.png"))
             
-        GPIB_PORT = Keithley2400.get_gpibport()
-        if GPIB_PORT !="":
-            Keithley2400.conncet_inst()
-            self.inst_sta.setPixmap(QtGui.QPixmap(":/icon/icons/yb.png"))
-            self.voltage,self.current,self.resistance = Keithley2400.measure_ohms_auto('200e6',qmdz_const.MEAS_MODE)
-            self.now_R.setText(str(self.resistance))
-            # Keithley2400.close_inst()         
+        instState = Keithley2400.conncet_inst()
+        if instState:
+            self.inst_sta.setPixmap(QtGui.QPixmap(":/icon/icons/yb.png"))     
         else:
             QtGui.QMessageBox.warning(self, u'警告', u"仪表2400未连接!")
             logger.warning("2400 isn't connected!")
